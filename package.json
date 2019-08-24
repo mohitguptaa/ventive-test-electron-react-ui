@@ -17,8 +17,7 @@
   "config": {
     "forge": {
       "packagerConfig": {
-        "icon": "assets/logo.icns",
-        "extraResource": "assets/logo.icns",
+        "icon": "assets/logo",
         "executableName": "Ventive Test App",
         "name": "Ventive Test App"
       },
