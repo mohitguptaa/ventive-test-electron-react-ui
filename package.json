@@ -1,15 +1,15 @@
 {
-  "name": "my-new-app",
-  "productName": "my-new-app",
+  "name": "ventive-test-app",
+  "productName": "ventive-test-app",
   "version": "1.0.0",
-  "description": "My Electron application description",
+  "description": "Ventive Test Assessment App",
   "main": ".webpack/main",
   "scripts": {
     "start": "electron-forge start",
     "package": "electron-forge package",
     "make": "electron-forge make",
     "publish": "electron-forge publish",
-    "lint": "echo \"No linting configured\""
+    "lint": "eslint --cache --color --ext .jsx,.js src"
   },
   "keywords": [],
   "author": "mohit",
@@ -21,7 +21,7 @@
         {
           "name": "@electron-forge/maker-squirrel",
           "config": {
-            "name": "my_new_app"
+            "name": "ventive-test-app"
           }
         },
         {
@@ -48,8 +48,8 @@
               "config": "./webpack.renderer.config.js",
               "entryPoints": [
                 {
-                  "html": "./src/index.html",
-                  "js": "./src/renderer.js",
+                  "html": "./webUI/static/index.html",
+                  "js": "./webUI/main.jsx",
                   "name": "main_window"
                 }
               ]
@@ -60,9 +60,15 @@
     }
   },
   "dependencies": {
-    "electron-squirrel-startup": "^1.0.0"
+    "electron-squirrel-startup": "^1.0.0",
+    "electron-window-state": "^5.0.3",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "react-hot-loader": "^4.12.11"
   },
   "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/preset-react": "^7.0.0",
     "@electron-forge/cli": "6.0.0-beta.44",
     "@electron-forge/maker-deb": "6.0.0-beta.44",
     "@electron-forge/maker-rpm": "6.0.0-beta.44",
@@ -70,9 +76,23 @@
     "@electron-forge/maker-zip": "6.0.0-beta.44",
     "@electron-forge/plugin-webpack": "6.0.0-beta.44",
     "@marshallofsound/webpack-asset-relocator-loader": "^0.5.0",
+    "babel-loader": "^8.0.6",
+    "babili-webpack-plugin": "^0.1.2",
     "css-loader": "^3.0.0",
     "electron": "6.0.4",
+    "eslint": "^6.2.2",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.14.3",
     "node-loader": "^0.6.0",
+    "node-sass": "^4.12.0",
+    "postcss-cssnext": "^3.1.0",
+    "postcss-import": "^12.0.1",
+    "postcss-loader": "^3.0.0",
+    "postcss-nested": "^4.1.2",
+    "postcss-pxtorem": "^4.0.1",
+    "sass-loader": "^7.3.1",
     "style-loader": "^0.23.1"
   }
 }
