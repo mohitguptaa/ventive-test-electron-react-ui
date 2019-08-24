@@ -1,6 +1,15 @@
 {
+  "parser": "babel-eslint",
   "extends": "eslint-config-airbnb",
   "rules": {
+    "react/jsx-indent": [
+      "error",
+      4,
+      {
+        "checkAttributes": true, 
+        "indentLogicalExpressions": true
+      }
+    ],
     "import/extensions": 0,
     "import/no-extraneous-dependencies": 0,
     "import/no-unresolved": [

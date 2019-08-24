@@ -9,7 +9,7 @@
     "package": "electron-forge package",
     "make": "electron-forge make",
     "publish": "electron-forge publish",
-    "lint": "eslint --cache --color --ext .jsx,.js src"
+    "lint": "eslint --cache --color --ext .jsx,.js src webUI"
   },
   "keywords": [],
   "author": "mohit",
@@ -76,6 +76,7 @@
     "@electron-forge/maker-zip": "6.0.0-beta.44",
     "@electron-forge/plugin-webpack": "6.0.0-beta.44",
     "@marshallofsound/webpack-asset-relocator-loader": "^0.5.0",
+    "babel-eslint": "^10.0.2",
     "babel-loader": "^8.0.6",
     "babili-webpack-plugin": "^0.1.2",
     "css-loader": "^3.0.0",

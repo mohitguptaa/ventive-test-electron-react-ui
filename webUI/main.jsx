@@ -5,11 +5,12 @@ import App from './app';
 
 const render = () => {
     ReactDOM.render(
-      <AppContainer>
-        <App />
-      </AppContainer>,
-      // eslint-disable-next-line no-undef
-      document.getElementById('App'));
+        <AppContainer>
+            <App />
+        </AppContainer>,
+        // eslint-disable-next-line no-undef
+        document.getElementById('App'),
+    );
 };
 
 render();
