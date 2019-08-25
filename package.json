@@ -72,6 +72,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
     "@babel/preset-react": "^7.0.0",
     "@electron-forge/cli": "^6.0.0-beta.44",
     "@electron-forge/maker-deb": "^6.0.0-beta.44",
@@ -90,6 +91,7 @@
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.14.3",
+    "file-loader": "^4.2.0",
     "node-loader": "^0.6.0",
     "node-sass": "^4.12.0",
     "postcss-cssnext": "^3.1.0",

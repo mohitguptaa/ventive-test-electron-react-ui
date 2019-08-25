@@ -10,6 +10,10 @@
         "indentLogicalExpressions": true
       }
     ],
+    "react/jsx-indent-props": [
+      "error",
+      4
+    ],
     "import/extensions": 0,
     "import/no-extraneous-dependencies": 0,
     "import/no-unresolved": [
