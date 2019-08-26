@@ -28,7 +28,8 @@
     "react/prefer-stateless-function": 0,
     "indent": [
       "error",
-      4
+      4,
+      {"SwitchCase": 1}
     ],
   }
 }
