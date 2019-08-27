@@ -3,6 +3,10 @@ import PropTypes from 'prop-types';
 import { Document, Page } from 'react-pdf/dist/entry.webpack';
 import './pdfViewer.scss';
 
+/**
+ * PDF Viewer to preview pdf files. This is using react-pdf
+ * since native object/embed/iframe doesn't support pdf preview.
+ */
 class PDFViewer extends Component {
     constructor() {
         super();

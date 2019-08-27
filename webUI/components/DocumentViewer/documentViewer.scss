@@ -1,39 +1,39 @@
+@import '../../static/styleGuide.scss';
+
 .document_viewer_container {
   position: relative;
-  width: calc(100% - 384px);
+  width: $documentViewWidth;
   height: 100%;
-  left: 384px;
+  left: $readerZoneWidth;
 
   img {
+    @include document_icon_large;
     position: absolute;
-    width: 41px;
-    height: 41px;
-    left: 80px;
-    top: 68px;
+    left: 80px; // Relative to the document viewer
+    top: 68px;  // Relative to the document viewer
   }
 
   .document_name {
     position: absolute;
     height: 41px;
-    left: 145px;
-    top: 70px;
-    font-family: Poppins;
-    font-style: normal;
+    left: 145px; // Relative to the document viewer
+    top: 70px; // Relative to the document viewer
+
+    @include fontStye;
     font-weight: bold;
     font-size: 36px;
     line-height: 54px;
     display: flex;
     align-items: center;
-
     color: #2d1f3f;
   }
 
   .document_view {
     position: absolute;
-    width: calc(100% - 79.16px);
-    height: calc(100% - 158px);
+    width: calc(100% - 80px);   // Consume full width after reducing left
+    height: calc(100% - 158px); // Consume full width after reducing top
     top: 158px;
-    left: 79.16px;
+    left: 80px;
 
     & > object {
       width: 100%;

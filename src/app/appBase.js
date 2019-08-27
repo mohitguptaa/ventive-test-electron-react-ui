@@ -21,12 +21,21 @@ class AppBase {
         });
         this.mainWindow = null;
         this.mainWindowState = null;
+
+        /**
+         * We are doing this such that
+         * we don't have to bind this everytime
+         */
         this.onAppReadyCb = this.onAppReady.bind(this);
         this.onAppActivateCb = this.showMainWindow.bind(this);
         this.onUncaughtExceptionCb = this.onUncaughtException.bind(this);
 
         this.setUpListeners();
+
+        // Singleton app
         this.requestSingleInstanceLock();
+
+        // It might be possible that app gets ready immediately
         if (this.app && this.app.isReady()) {
             this.onAppReady();
         }
@@ -101,12 +110,14 @@ class AppBase {
 
         if (width && height && x && y) {
             this.mainWindow = new MyBrowserWindow(opts, {
+                /* since we are using webpack */
                 // eslint-disable-next-line no-undef
                 url: MAIN_WINDOW_WEBPACK_ENTRY,
                 loadReactDevTools: this.config.loadDevTools,
             }).create();
         } else {
             this.mainWindow = new MyBrowserWindow({}, {
+                /* since we are using webpack */
                 // eslint-disable-next-line no-undef
                 url: MAIN_WINDOW_WEBPACK_ENTRY,
                 loadReactDevTools: this.config.loadDevTools,

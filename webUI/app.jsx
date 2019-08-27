@@ -11,6 +11,9 @@ const {
 } = components;
 
 class App extends React.Component {
+    /**
+     * Set the window overlay based on disableWindow state
+     */
     getOverlayClass = () => {
         const { disableWindow } = this.props;
         return disableWindow ? 'overlay visible' : 'overlay';
@@ -46,6 +49,12 @@ App.defaultProps = {
     selectedDocument: null,
 };
 
+/**
+ * Ideally this should be the only
+ * place where we should do mapState
+ *
+ * Rest all components should recieve state in props
+ */
 const mapStateToProps = (state) => {
     const { disableWindow, documents, selectedDocument } = state;
     return { disableWindow, documents, selectedDocument };

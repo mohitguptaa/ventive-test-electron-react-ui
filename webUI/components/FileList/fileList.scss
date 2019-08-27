@@ -1,21 +1,21 @@
+@import '../../static/styleGuide.scss';
+
 .file_list_container {
   position: absolute;
-  background-color: #070d59;
   top: 158px;
   left: 20px;
-  width: calc(100% - 40px);
-  height: 60%;
-  overflow: scroll;
+  width: calc(100% - 40px); //calculate width after reducing 20px from both sides
+  height: 60%; // protect overlapping with upload file button
+  overflow: scroll; // enable scrolling on file list
 
   & > p {
     position: relative;
-    font-family: Poppins;
-    font-style: normal;
+
+    @include fontStye;
     font-weight: 600;
     font-size: 18px;
     line-height: 31px;
     margin-left: 33px;
-    /* identical to box height, or 175% */
 
     text-transform: uppercase;
 
