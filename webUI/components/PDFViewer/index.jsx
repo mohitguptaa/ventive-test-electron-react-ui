@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Document, Page } from 'react-pdf/dist/entry.webpack';
+import { Document, Page, pdfjs } from 'react-pdf';
 import './pdfViewer.scss';
+
+// This is required as webpack is not packing this properly and is an open issue with react-pdf
+pdfjs.GlobalWorkerOptions.workerSrc = 'pdf.worker.js';
 
 /**
  * PDF Viewer to preview pdf files. This is using react-pdf
