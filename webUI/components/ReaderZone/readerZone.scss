@@ -1,6 +1,8 @@
+@import "../../static/styleGuide.scss";
+
 .reader_zone_container {
   position: absolute;
-  width: 384px;
+  width: $readerZoneWidth;
   height: 100%;
   background-color: #070d59;
 

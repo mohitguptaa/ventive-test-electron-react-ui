@@ -15,6 +15,12 @@ export default function (state = initialState, action) {
             };
         }
         case ADD_DOCUMENTS: {
+            /**
+             * We have kept documents as an object,
+             * with filename as key and not an array
+             * This is done to update the documents with same name
+             * We can easily change this logic, though
+             */
             const documents = Object.values(action.payload.documents);
             const documentsToAdd = documents.map((document) => ({
                 [document.name.trim().replace(' ', '')]: document,

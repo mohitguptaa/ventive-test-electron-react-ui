@@ -6,11 +6,18 @@ import documentIcon from '../../static/images/document_icon.png';
 import { selectDocument } from '../../store/actions/actions';
 
 class FileListItem extends React.Component {
+    /**
+     * Dispatch select document action
+     * when a user selects a file
+     */
     handleOnClick = () => {
         const { file, dispatch } = this.props;
         dispatch(selectDocument(file));
     }
 
+    /**
+     * Add overlay class on selected item
+     */
     getOverlayClass = () => {
         const { selected } = this.props;
         return selected ? 'overlay selected' : 'overlay';

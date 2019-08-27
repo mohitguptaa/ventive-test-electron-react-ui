@@ -7,6 +7,10 @@ import { disableWindow, addDocuments } from '../../store/actions/actions';
 
 
 class UploadFilesButton extends React.Component {
+    /**
+     * Dispatch disable window action to
+     * disable the window and add overlay
+     */
     disableWindow = (disable) => {
         const { dispatch } = this.props;
         dispatch(disableWindow(disable));
@@ -18,11 +22,18 @@ class UploadFilesButton extends React.Component {
         this.disableWindow(true);
     }
 
+    /**
+     * Reenable the window once
+     * file selection is done
+     */
     handleOnFocus = () => {
         document.body.onfocus = null;
         this.disableWindow(false);
     }
 
+    /**
+     * Add selected files to store
+     */
     handleOnFileChange = (e) => {
         const { dispatch } = this.props;
         if (e.target.files) {

@@ -1,3 +1,5 @@
+@import "../../static/styleGuide.scss";
+
 .upload_files_button {
   position: absolute;
   height: 70px;
@@ -13,8 +15,7 @@
   }
 
   img {
-    width: 33px;
-    height: 33px;
+    @include cloud_icon;
     top: 16px;
     left: 59px;
   }
@@ -25,8 +26,8 @@
     height: 37px;
     top: 17px;
     left: 106px;
-    font-family: Poppins;
-    font-style: normal;
+
+    @include fontStye;
     font-weight: 600;
     font-size: 22px;
     line-height: 33px;

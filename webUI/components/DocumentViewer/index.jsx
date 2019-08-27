@@ -4,7 +4,18 @@ import './documentViewer.scss';
 import PDFViewer from '../PDFViewer';
 import documentIcon from '../../static/images/document_icon_large.png';
 
+/**
+ * Component to display the document preview on the right side panel
+ */
 class DocumentViewer extends React.Component {
+    /**
+     * Get the document view, based on the type of the document.
+     * object html tag doesn't work for pdf in electron. Hence using
+     * react-pdf npm module in PDFViewer
+     *
+     * object element will handle most
+     * file like text, png, jpeg, html, etc.
+     */
     getDocumentView = () => {
         const { document } = this.props;
         if (document.type === 'application/pdf') {
@@ -35,6 +46,7 @@ class DocumentViewer extends React.Component {
                 </div>
             );
         }
+        // Initially don't display anything on the right panel
         return (
             <div className="document_viewer_container" />
         );
