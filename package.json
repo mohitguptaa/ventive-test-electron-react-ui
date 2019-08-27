@@ -9,7 +9,8 @@
     "package": "electron-forge package",
     "make": "electron-forge make",
     "publish": "electron-forge publish",
-    "lint": "eslint --cache --color --ext .jsx,.js src webUI"
+    "lint": "eslint --cache --color --ext .jsx,.js src webUI",
+    "test": "jest webUI src"
   },
   "keywords": [],
   "author": "mohit",
@@ -97,6 +98,7 @@
     "eslint-plugin-react": "^7.14.3",
     "file-loader": "^4.2.0",
     "html-loader": "^0.5.5",
+    "jest": "^24.9.0",
     "node-loader": "^0.6.0",
     "node-sass": "^4.12.0",
     "postcss-cssnext": "^3.1.0",
@@ -105,6 +107,7 @@
     "postcss-nested": "^4.1.2",
     "postcss-pxtorem": "^4.0.1",
     "sass-loader": "^7.3.1",
-    "style-loader": "^0.23.1"
+    "style-loader": "^0.23.1",
+    "url-loader": "^2.1.0"
   }
 }

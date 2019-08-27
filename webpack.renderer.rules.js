@@ -28,7 +28,11 @@ rules.push(
 rules.push(
   {
     test: /\.(png|jpe?g|gif)$/i,
-    use: [{ loader: 'file-loader', },],
+    loader: 'url-loader',
+    options: {
+      limit: 10000,
+      name: 'main_window'
+    }
   });
 
 rules.push({

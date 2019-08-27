@@ -147,8 +147,7 @@ class AppBase {
      * @memberof Application
      * @returns {undefined}
      */
-    onUncaughtException(error) {
-        console.log(error);
+    onUncaughtException() {
         this.exitGracefully('Application terminated unexpectedly');
     }
 
