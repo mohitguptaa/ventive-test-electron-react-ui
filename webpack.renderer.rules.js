@@ -31,4 +31,13 @@ rules.push(
     use: [{ loader: 'file-loader', },],
   });
 
+rules.push({
+  test: /\.html$/,
+  use: [
+    {
+      loader: "html-loader"
+    }
+  ]
+});
+
 module.exports = rules;

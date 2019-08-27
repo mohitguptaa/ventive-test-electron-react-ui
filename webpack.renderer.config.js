@@ -10,6 +10,9 @@ module.exports = {
     extensions: ['.js', '.jsx'],
   },
   plugins: [
-    new HtmlWebpackPlugin(),
+    new HtmlWebpackPlugin({
+      template: "./webUI/static/index.html",
+      filename: "./index.html"
+    }),
   ],
 };
