@@ -1,0 +1,22 @@
+$readerZoneWidth: 384px;
+$documentViewWidth: calc(100% - 384px);
+
+@mixin fontStye {
+  font-family: Poppins;
+  font-style: normal;
+}
+
+@mixin document_icon_large {
+  width: 41px;
+  height: 41px;
+}
+
+@mixin document_icon_small {
+  width: 17px;
+  height: 17px;
+}
+
+@mixin cloud_icon {
+  width: 33px;
+  height: 33px;
+}

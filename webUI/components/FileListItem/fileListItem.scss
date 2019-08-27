@@ -1,0 +1,56 @@
+@import "../../static/styleGuide.scss";
+
+.file_list_item_container {
+  position: relative;
+  height: 82px;
+  cursor: pointer;
+
+  .overlay {
+    width: 100%;
+    height: 95%;
+    background: #5893d4;
+    opacity: 0;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+
+    &.selected {
+      opacity: 0.2;
+    }
+  }
+
+  &:hover .overlay {
+    opacity: 0.2;
+  }
+
+  img {
+    position: absolute;
+    @include document_icon_small;
+    left: 34px;
+    top: 18px;
+  }
+
+  .document_number {
+    position: absolute;
+    width: 170px;
+    height: 63px;
+    left: 69px;
+    top: 9px;
+
+    @include fontStye;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 31px;
+    text-overflow: ellipsis; // to protect text overflow
+    overflow: hidden;
+    white-space: nowrap;
+
+    color: #ffffff;
+    p {
+      position: absolute;
+      color: #5e54a5;
+      font-size: 15px;
+      font-weight: 100;
+      top: 7px;
+    }
+  }
+}

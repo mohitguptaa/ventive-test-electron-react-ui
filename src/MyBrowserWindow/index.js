@@ -46,7 +46,7 @@ class MyBrowserWindow {
             show: false,
             minWidth,
             minHeight,
-            resizable: false,
+            resizable: true,
             center: true,
             title,
             icon: path.resolve(icon),
@@ -54,6 +54,7 @@ class MyBrowserWindow {
                 webviewTag,
                 nodeIntegration,
                 devTools: enableDevTools,
+                plugins: true,
             },
         };
     }

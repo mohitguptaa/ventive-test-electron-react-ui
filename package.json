@@ -9,14 +9,19 @@
     "package": "electron-forge package",
     "make": "electron-forge make",
     "publish": "electron-forge publish",
-    "lint": "eslint --cache --color --ext .jsx,.js src"
+    "lint": "eslint --cache --color --ext .jsx,.js src webUI",
+    "test": "jest webUI src"
   },
   "keywords": [],
   "author": "mohit",
   "license": "MIT",
   "config": {
     "forge": {
-      "packagerConfig": {},
+      "packagerConfig": {
+        "icon": "assets/logo",
+        "executableName": "Ventive Test App",
+        "name": "Ventive Test App"
+      },
       "makers": [
         {
           "name": "@electron-forge/maker-squirrel",
@@ -64,27 +69,37 @@
     "electron-window-state": "^5.0.3",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
-    "react-hot-loader": "^4.12.11"
+    "react-hot-loader": "^4.12.11",
+    "react-pdf": "^4.1.0",
+    "react-redux": "^7.1.1",
+    "redux": "^4.0.4",
+    "redux-thunk": "^2.3.0"
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
     "@babel/preset-react": "^7.0.0",
-    "@electron-forge/cli": "6.0.0-beta.44",
-    "@electron-forge/maker-deb": "6.0.0-beta.44",
-    "@electron-forge/maker-rpm": "6.0.0-beta.44",
-    "@electron-forge/maker-squirrel": "6.0.0-beta.44",
-    "@electron-forge/maker-zip": "6.0.0-beta.44",
-    "@electron-forge/plugin-webpack": "6.0.0-beta.44",
+    "@electron-forge/cli": "^6.0.0-beta.44",
+    "@electron-forge/maker-deb": "^6.0.0-beta.44",
+    "@electron-forge/maker-rpm": "^6.0.0-beta.44",
+    "@electron-forge/maker-squirrel": "^6.0.0-beta.44",
+    "@electron-forge/maker-zip": "^6.0.0-beta.44",
+    "@electron-forge/plugin-webpack": "^6.0.0-beta.44",
     "@marshallofsound/webpack-asset-relocator-loader": "^0.5.0",
+    "babel-eslint": "^10.0.2",
     "babel-loader": "^8.0.6",
     "babili-webpack-plugin": "^0.1.2",
+    "copy-webpack-plugin": "^5.0.4",
     "css-loader": "^3.0.0",
-    "electron": "6.0.4",
+    "electron": "^6.0.4",
     "eslint": "^6.2.2",
     "eslint-config-airbnb": "^18.0.1",
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.14.3",
+    "file-loader": "^4.2.0",
+    "html-loader": "^0.5.5",
+    "jest": "^24.9.0",
     "node-loader": "^0.6.0",
     "node-sass": "^4.12.0",
     "postcss-cssnext": "^3.1.0",
@@ -93,6 +108,7 @@
     "postcss-nested": "^4.1.2",
     "postcss-pxtorem": "^4.0.1",
     "sass-loader": "^7.3.1",
-    "style-loader": "^0.23.1"
+    "style-loader": "^0.23.1",
+    "url-loader": "^2.1.0"
   }
 }

@@ -1,0 +1,24 @@
+@import '../../static/styleGuide.scss';
+
+.file_list_container {
+  position: absolute;
+  top: 158px;
+  left: 20px;
+  width: calc(100% - 40px); //calculate width after reducing 20px from both sides
+  height: 60%; // protect overlapping with upload file button
+  overflow: scroll; // enable scrolling on file list
+
+  & > p {
+    position: relative;
+
+    @include fontStye;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 31px;
+    margin-left: 33px;
+
+    text-transform: uppercase;
+
+    color: rgba(255, 255, 255, 0.27);
+  }
+}

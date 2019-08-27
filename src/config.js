@@ -9,7 +9,7 @@ export default {
         minHeight: 600,
         title: 'Ventive Test App',
         icon: `${__dirname}/../assets/logo.png`,
-        nodeIntegration: true,
+        nodeIntegration: false,
         webviewTag: true,
         enableDevTools: true,
     },
