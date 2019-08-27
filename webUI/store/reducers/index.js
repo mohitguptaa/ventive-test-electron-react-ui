@@ -1,15 +1,27 @@
-import { SAMPLE_ACTION } from '../actionTypes';
+import { DISABLE_WINDOW, ADD_DOCUMENTS } from '../actionTypes';
 
 const initialState = {
-    state_var1: undefined,
+    disableWindow: false,
+    documents: {},
 };
 
 export default function (state = initialState, action) {
     switch (action.type) {
-        case SAMPLE_ACTION: {
+        case DISABLE_WINDOW: {
             return {
                 ...state,
-                state_var1: action.payload.arg1,
+                disableWindow: action.payload.disable,
+            };
+        }
+        case ADD_DOCUMENTS: {
+            const files = Object.values(action.payload.files);
+            const filesToAdd = files.map((file) => ({
+                [file.name.trim().replace(' ', '')]: file,
+            }));
+
+            return {
+                ...state,
+                documents: Object.assign(state.documents, ...filesToAdd),
             };
         }
         default:

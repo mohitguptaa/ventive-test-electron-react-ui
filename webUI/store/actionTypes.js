@@ -1,2 +1,2 @@
-// eslint-disable-next-line import/prefer-default-export
-export const SAMPLE_ACTION = 'SAMPLE_ACTION';
+export const DISABLE_WINDOW = 'DISABLE_WINDOW';
+export const ADD_DOCUMENTS = 'ADD_DOCUMENTS';

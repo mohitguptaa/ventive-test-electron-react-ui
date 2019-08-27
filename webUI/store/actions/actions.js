@@ -1,10 +1,15 @@
-import { SAMPLE_ACTION } from '../actionTypes';
+import { DISABLE_WINDOW, ADD_DOCUMENTS } from '../actionTypes';
 
-// eslint-disable-next-line import/prefer-default-export
-export const sampleAction = (arg1, arg2) => ({
-    type: SAMPLE_ACTION,
+export const disableWindow = (disable) => ({
+    type: DISABLE_WINDOW,
     payload: {
-        arg1,
-        arg2,
+        disable,
+    },
+});
+
+export const addDocuments = (files) => ({
+    type: ADD_DOCUMENTS,
+    payload: {
+        files,
     },
 });

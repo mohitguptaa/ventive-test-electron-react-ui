@@ -1,0 +1,30 @@
+.document_viewer_container {
+  position: relative;
+  width: calc(100% - 384px);
+  height: 100%;
+  left: 384px;
+
+  img {
+    position: absolute;
+    width: 41px;
+    height: 41px;
+    left: 80px;
+    top: 68px;
+  }
+
+  .document_name {
+    position: absolute;
+    height: 41px;
+    left: 145px;
+    top: 70px;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 54px;
+    display: flex;
+    align-items: center;
+
+    color: #2d1f3f;
+  }
+}

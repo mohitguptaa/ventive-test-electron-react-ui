@@ -1,0 +1,24 @@
+.file_list_container {
+  position: absolute;
+  background-color: #070d59;
+  top: 158px;
+  left: 20px;
+  width: calc(100% - 40px);
+  height: 60%;
+  overflow: scroll;
+
+  & > p {
+    position: relative;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 31px;
+    margin-left: 33px;
+    /* identical to box height, or 175% */
+
+    text-transform: uppercase;
+
+    color: rgba(255, 255, 255, 0.27);
+  }
+}
