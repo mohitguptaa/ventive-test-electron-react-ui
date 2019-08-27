@@ -13,7 +13,6 @@ const render = () => {
                 <App />
             </Provider>
         </AppContainer>,
-        // eslint-disable-next-line no-undef
         document.getElementById('App'),
     );
 };

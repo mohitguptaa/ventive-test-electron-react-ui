@@ -1,14 +1,29 @@
 import React from 'react';
 import './fileListItem.scss';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import documentIcon from '../../static/images/document_icon.png';
+import { selectDocument } from '../../store/actions/actions';
 
 class FileListItem extends React.Component {
+    handleOnClick = () => {
+        const { file, dispatch } = this.props;
+        dispatch(selectDocument(file));
+    }
+
+    getOverlayClass = () => {
+        const { selected } = this.props;
+        return selected ? 'overlay selected' : 'overlay';
+    }
+
     render() {
         const { file } = this.props;
         return (
-            <div className="file_list_item_container">
-                <div className="overlay" />
+            <div
+                className="file_list_item_container"
+                onClick={this.handleOnClick}
+            >
+                <div className={this.getOverlayClass()} />
                 <img src={documentIcon} alt="Document Icon" />
                 <div className="document_number" title={file.name}>
                     {file.name}
@@ -20,7 +35,13 @@ class FileListItem extends React.Component {
 }
 
 FileListItem.propTypes = {
+    dispatch: PropTypes.func.isRequired,
     file: PropTypes.object.isRequired,
+    selected: PropTypes.bool,
 };
 
-export default FileListItem;
+FileListItem.defaultProps = {
+    selected: false,
+};
+
+export default connect()(FileListItem);
