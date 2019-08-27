@@ -1,8 +1,9 @@
-import { DISABLE_WINDOW, ADD_DOCUMENTS } from '../actionTypes';
+import { DISABLE_WINDOW, ADD_DOCUMENTS, SELECT_DOCUMENT } from '../actionTypes';
 
 const initialState = {
     disableWindow: false,
     documents: {},
+    selectedDocument: null,
 };
 
 export default function (state = initialState, action) {
@@ -14,14 +15,20 @@ export default function (state = initialState, action) {
             };
         }
         case ADD_DOCUMENTS: {
-            const files = Object.values(action.payload.files);
-            const filesToAdd = files.map((file) => ({
-                [file.name.trim().replace(' ', '')]: file,
+            const documents = Object.values(action.payload.documents);
+            const documentsToAdd = documents.map((document) => ({
+                [document.name.trim().replace(' ', '')]: document,
             }));
 
             return {
                 ...state,
-                documents: Object.assign(state.documents, ...filesToAdd),
+                documents: Object.assign(state.documents, ...documentsToAdd),
+            };
+        }
+        case SELECT_DOCUMENT: {
+            return {
+                ...state,
+                selectedDocument: action.payload.document,
             };
         }
         default:

@@ -17,14 +17,17 @@ class App extends React.Component {
     }
 
     render() {
-        const { documents } = this.props;
+        const { documents, selectedDocument } = this.props;
         return (
             <div className="main_container">
                 <ReaderZone>
-                    <FileList files={documents} />
+                    <FileList
+                        files={documents}
+                        selectedDocument={selectedDocument}
+                    />
                     <UploadFilesButton />
                 </ReaderZone>
-                <DocumentViewer />
+                <DocumentViewer document={selectedDocument} />
                 <div className={this.getOverlayClass()} />
             </div>
         );
@@ -34,16 +37,18 @@ class App extends React.Component {
 App.propTypes = {
     disableWindow: PropTypes.bool,
     documents: PropTypes.object,
+    selectedDocument: PropTypes.object,
 };
 
 App.defaultProps = {
     disableWindow: false,
     documents: {},
+    selectedDocument: null,
 };
 
 const mapStateToProps = (state) => {
-    const { disableWindow, documents } = state;
-    return { disableWindow, documents };
+    const { disableWindow, documents, selectedDocument } = state;
+    return { disableWindow, documents, selectedDocument };
 };
 
 export default connect(

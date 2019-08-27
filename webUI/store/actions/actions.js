@@ -1,4 +1,4 @@
-import { DISABLE_WINDOW, ADD_DOCUMENTS } from '../actionTypes';
+import { DISABLE_WINDOW, ADD_DOCUMENTS, SELECT_DOCUMENT } from '../actionTypes';
 
 export const disableWindow = (disable) => ({
     type: DISABLE_WINDOW,
@@ -7,9 +7,16 @@ export const disableWindow = (disable) => ({
     },
 });
 
-export const addDocuments = (files) => ({
+export const addDocuments = (documents) => ({
     type: ADD_DOCUMENTS,
     payload: {
-        files,
+        documents,
+    },
+});
+
+export const selectDocument = (document) => ({
+    type: SELECT_DOCUMENT,
+    payload: {
+        document,
     },
 });

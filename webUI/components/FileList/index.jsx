@@ -5,9 +5,14 @@ import FileListItem from '../FileListItem';
 
 class FileList extends React.Component {
     getFileListItems = () => {
-        const { files } = this.props;
+        const { files, selectedDocument } = this.props;
         return Object.values(files).map((document) => (
-            <FileListItem key={document.name} file={document} />
+            <FileListItem
+                key={document.name}
+                file={document}
+                selected={selectedDocument
+                    && document.name === selectedDocument.name}
+            />
         ));
     }
 
@@ -23,6 +28,11 @@ class FileList extends React.Component {
 
 FileList.propTypes = {
     files: PropTypes.object.isRequired,
+    selectedDocument: PropTypes.object,
+};
+
+FileList.defaultProps = {
+    selectedDocument: null,
 };
 
 export default FileList;
